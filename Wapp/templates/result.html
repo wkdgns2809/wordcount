@@ -1,0 +1,57 @@
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+<body>
+    <div class="container" style="background-color:antiquewhite">
+        <br><br><br><br>
+        <center>
+            <div class="ttop">
+                <h1>Word Count</h1>
+            </div>
+            <div class="row" style="margin-top:100px">
+                <div class="col">
+                    <textarea class="form-control" cols="30" rows="10">{{text}}</textarea>
+                    <br>
+                    <a href="{%url 'main'%}">
+                        <button type="button" class="btn btn-secondary btn-lg btn-block">돌아가기</button>
+                    </a>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        {%for word,count in word_dic3.items%}
+                        <li class="list-group-item"><u>단어</u> <strong>{{word}}</strong> 가 <strong>{{count}}</strong> 개 있습니다</li>
+                        {%endfor%}
+                        
+                        {%for word,count in word_dic2.items%}
+                        <li class="list-group-item"><u>문장</u> <strong>{{word}}</strong> 가 <strong>{{count}}</strong> 개 있습니다</li>
+
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </center>
+    </div>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Yanone+Kaffeesatz');
+    body{font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size:25px;
+    background-color:saddlebrown;}
+    .ttop{font-family: 'Baloo Bhai', cursive;
+    font-size: 99px;
+
+    }
+</style>
